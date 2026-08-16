@@ -28,7 +28,7 @@ body {
   display: none !important;
 }
 
-.sticker img {
+.sticker img, .sticker-on-envelope img, .letter-sticker img {
   width: 90px;
   height: 90px;
   object-fit: contain;
@@ -96,8 +96,9 @@ button {
   width: 0%;
 }
 
-/* Letter Step */
-.envelope-box {
+/* Envelope & Opening Animation */
+.envelope-wrapper {
+  position: relative;
   cursor: pointer;
 }
 
@@ -116,14 +117,24 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
   background: #fff0f5;
   border: 2px dashed #ff4d8d;
   border-radius: 15px;
   padding: 20px;
-  width: 90%;
+  width: 100%;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   z-index: 10;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+/* Envelope Open Active Animation Class */
+.envelope-wrapper.open .popup-letter {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .letter-content h3 {

@@ -10,10 +10,10 @@
 </head>
 <body>
 
-  <!-- STEP 1: YES / NO Question -->
+  <!-- STEP 1: Question -->
   <div class="card" id="questionCard">
     <div class="sticker">
-      <img src="https://gifdb.com/images/high/cute-happy-dance-sticker-10708xjsf78q79.gif" alt="Cute Bear">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHc3ZXB4YjVnYnh0M3B5aXByY3BsaGNvZjRncXpjcWJuYTBzbms1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute Bear">
     </div>
     <h2 class="title">ခိခိကိုချစ်လား? 💖</h2>
     <div class="btn-group">
@@ -22,10 +22,10 @@
     </div>
   </div>
 
-  <!-- STEP 2: Love Meter Animation -->
+  <!-- STEP 2: Love Meter -->
   <div class="card hidden" id="meterCard">
     <div class="sticker">
-      <img src="https://gifdb.com/images/high/cute-happy-dance-sticker-10708xjsf78q79.gif" alt="Happy Sticker">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHc3ZXB4YjVnYnh0M3B5aXByY3BsaGNvZjRncXpjcWJuYTBzbms1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Happy Bear">
     </div>
     <h3 class="status-text" id="statusText">Measuring love level... 💕</h3>
     <div class="meter-display" id="meterDisplay">0%</div>
@@ -34,27 +34,33 @@
     </div>
   </div>
 
-  <!-- STEP 3: Envelope / Letter Popup -->
+  <!-- STEP 3: Envelope -->
   <div class="card hidden" id="letterCard">
-    <div class="envelope-box" onclick="openLetter()">
-      <div class="sticker">
-        <img src="https://gifdb.com/images/high/cute-happy-dance-sticker-10708xjsf78q79.gif" alt="Happy Cat">
+    <div class="envelope-wrapper" id="envelopeWrapper" onclick="openLetter()">
+      <div class="envelope">
+        <div class="envelope-flap"></div>
+        <div class="sticker-on-envelope">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHc3ZXB4YjVnYnh0M3B5aXByY3BsaGNvZjRncXpjcWJuYTBzbms1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cat Sticker">
+        </div>
+        <h2>I KNEW IT! 😻</h2>
+        <p class="love-subtitle">I love you 1000% 💌</p>
+        <div class="click-hint">Click to open letter 👇</div>
       </div>
-      <h2>I KNEW IT! 😻</h2>
-      <p class="love-subtitle">I love you 1000% 💌</p>
-      <div class="click-hint">Click the envelope to open my letter 👇</div>
-    </div>
 
-    <!-- Popup Letter Inside -->
-    <div class="popup-letter hidden" id="popupLetter">
-      <div class="letter-content">
-        <h3>Dear Special Someone, 💖</h3>
-        <p>
-          ရင်ထဲမှာရှိတဲ့ ခံစားချက်တွေကို ချစ်ရသူမီကူလေး သိစေချင်ပါတယ်။ <br>
-          အမြဲတမ်း ခိခိဘေးနားမှာ ရှိပေးလို့ ကျေးဇူးအများကြီးတင်ပါတယ်နော်။ 💕
-        </p>
-        <div class="signature">Forever Yours 💌</div>
-        <button class="close-btn" onclick="closeLetter()">Click to close letter ✖</button>
+      <!-- Letter Popup Animation -->
+      <div class="popup-letter" id="popupLetter">
+        <div class="letter-content">
+          <div class="letter-sticker">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHc3ZXB4YjVnYnh0M3B5aXByY3BsaGNvZjRncXpjcWJuYTBzbms1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute Cat">
+          </div>
+          <h3>Dear Special Someone, 💖</h3>
+          <p>
+            ရင်ထဲမှာရှိတဲ့ ခံစားချက်တွေကို ချစ်ရသူမီကူလေး သိစေချင်ပါတယ်။ <br>
+            အမြဲတမ်း ခိခိဘေးနားမှာ ရှိပေးလို့ ကျေးဇူးအများကြီးတင်ပါတယ်နော်။ 💕
+          </p>
+          <div class="signature">Forever Yours 💌</div>
+          <button class="close-btn" onclick="event.stopPropagation(); closeLetter();">Click to close letter ✖</button>
+        </div>
       </div>
     </div>
   </div>

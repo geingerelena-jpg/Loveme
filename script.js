@@ -1,4 +1,3 @@
-// NO Button ရှောင်ပြေးရန် Function
 function moveNoBtn() {
   const noBtn = document.getElementById('noBtn');
   const x = Math.floor(Math.random() * 200) - 100;
@@ -6,7 +5,6 @@ function moveNoBtn() {
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// YES နှိပ်လိုက်ရင် Meter စတင်ရန်
 function startLoveMeter() {
   document.getElementById('questionCard').classList.add('hidden');
   document.getElementById('meterCard').classList.remove('hidden');
@@ -48,11 +46,10 @@ function startLoveMeter() {
   });
 }
 
-// စာအိတ် ဖွင့်/ပိတ် Function များ
 function openLetter() {
-  document.getElementById('popupLetter').classList.remove('hidden');
+  document.getElementById('envelopeWrapper').classList.add('open');
 }
 
 function closeLetter() {
-  document.getElementById('popupLetter').classList.add('hidden');
+  document.getElementById('envelopeWrapper').classList.remove('open');
 }
