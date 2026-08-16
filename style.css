@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffdeed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+  width: 85%;
+  max-width: 340px;
+  position: relative;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.sticker img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.title {
+  color: #ff2a75;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  min-height: 50px;
+  position: relative;
+}
+
+button {
+  background: #ff4d8d;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 77, 141, 0.3);
+}
+
+#noBtn {
+  background: #eee;
+  color: #666;
+  box-shadow: none;
+  position: relative;
+}
+
+/* Meter Step */
+.status-text {
+  color: #ff4d8d;
+  font-size: 15px;
+  margin: 10px 0 5px;
+}
+
+.meter-display {
+  font-size: 45px;
+  font-weight: bold;
+  color: #ff2a75;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  background: #ffe3ed;
+  height: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress-fill {
+  background: #ff2a75;
+  height: 100%;
+  width: 0%;
+}
+
+/* Letter Step */
+.envelope-box {
+  cursor: pointer;
+}
+
+.love-subtitle {
+  color: #ff4d8d;
+  font-weight: bold;
+}
+
+.click-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+}
+
+.popup-letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff0f5;
+  border: 2px dashed #ff4d8d;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.letter-content h3 {
+  color: #ff2a75;
+  margin: 10px 0;
+}
+
+.letter-content p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.signature {
+  text-align: right;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ff4d8d;
+  margin-top: 10px;
+}
+
+.close-btn {
+  background: transparent;
+  color: #888;
+  box-shadow: none;
+  font-size: 12px;
+  margin-top: 15px;
+  padding: 5px;
+}
