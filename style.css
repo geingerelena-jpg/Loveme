@@ -28,9 +28,9 @@ body {
   display: none !important;
 }
 
-.sticker img, .sticker-on-envelope img, .letter-sticker img {
-  width: 90px;
-  height: 90px;
+.sticker img {
+  width: 85px;
+  height: 85px;
   object-fit: contain;
 }
 
@@ -96,71 +96,84 @@ button {
   width: 0%;
 }
 
-/* Envelope & Opening Animation */
-.envelope-wrapper {
+/* --- Real Envelope & Sliding Animation --- */
+.envelope-container {
   position: relative;
+  width: 100%;
+  height: 250px;
+  background: #ffb6c1;
+  border-radius: 15px;
   cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(255, 77, 141, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.envelope-body {
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 
 .love-subtitle {
-  color: #ff4d8d;
+  color: #d81b60;
   font-weight: bold;
+  margin: 5px 0;
 }
 
 .click-hint {
   font-size: 12px;
-  color: #888;
+  color: #666;
   margin-top: 10px;
 }
 
-.popup-letter {
+/* Sliding Letter Popup */
+.letter {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  opacity: 0;
-  background: #fff0f5;
-  border: 2px dashed #ff4d8d;
-  border-radius: 15px;
-  padding: 20px;
-  width: 100%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  z-index: 10;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  pointer-events: none;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.15);
+  z-index: 5;
+  transform: translateY(100%); /* မနှိပ်မချင်း အောက်မှာ ပုန်းနေမည် */
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Envelope Open Active Animation Class */
-.envelope-wrapper.open .popup-letter {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-  pointer-events: auto;
+/* နှိပ်လိုက်သောအခါ စာရွက် အပေါ်သို့ ထွက်လာမည့် Animation Class */
+.envelope-container.open .letter {
+  transform: translateY(-5%);
 }
 
 .letter-content h3 {
   color: #ff2a75;
-  margin: 10px 0;
+  margin: 5px 0 10px;
+  font-size: 16px;
 }
 
 .letter-content p {
-  font-size: 14px;
+  font-size: 13px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .signature {
   text-align: right;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   color: #ff4d8d;
   margin-top: 10px;
 }
 
 .close-btn {
-  background: transparent;
-  color: #888;
-  box-shadow: none;
+  background: #ff4d8d;
+  color: white;
   font-size: 12px;
-  margin-top: 15px;
-  padding: 5px;
+  margin-top: 10px;
+  padding: 5px 15px;
 }

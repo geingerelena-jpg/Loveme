@@ -46,10 +46,11 @@ function startLoveMeter() {
   });
 }
 
-function openLetter() {
-  document.getElementById('envelopeWrapper').classList.add('open');
+// စာအိတ်နှိပ်လိုက်မှ စာရွက် အောက်ကနေ အပေါ်သို့ ထွက်လာမည့် Function
+function openEnvelope() {
+  document.getElementById('envelopeContainer').classList.add('open');
 }
 
-function closeLetter() {
-  document.getElementById('envelopeWrapper').classList.remove('open');
+function closeEnvelope() {
+  document.getElementById('envelopeContainer').classList.remove('open');
 }
